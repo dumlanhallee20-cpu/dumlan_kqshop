@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | KQ Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <main class="container page">
+
+    <!-- Bag is empty -->
+    <section id="checkout-empty" class="narrow" hidden>
+      <h1 class="display page-title">Checkout</h1>
+      <p class="empty">Your bag is empty.</p>
+      <a class="pill pill-black" href="shop.html">Shop now</a>
+    </section>
+
+    <!-- Checkout form -->
+    <section id="checkout-form-wrap" hidden>
+      <h1 class="display page-title">Checkout</h1>
+      <div class="checkout">
+        <form id="checkout-form" novalidate>
+          <p class="notice" id="guest-note">
+            Checking out as a guest.
+            <button type="button" class="link-btn" data-action="open-login">Sign in</button> to save your orders.
+          </p>
+
+          <h2 class="block-title">Delivery</h2>
+          <div class="field">
+            <label for="co-name">Full name</label>
+            <div class="input-wrap"><input id="co-name" name="name" type="text" autocomplete="name"></div>
+            <p class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="co-email">Email</label>
+            <div class="input-wrap"><input id="co-email" name="email" type="email" autocomplete="email"></div>
+            <p class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="co-phone">Phone number</label>
+            <div class="input-wrap"><input id="co-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <p class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="co-address">Address</label>
+            <div class="input-wrap"><input id="co-address" name="address" type="text" autocomplete="street-address"></div>
+            <p class="field-error" role="alert"></p>
+          </div>
+
+          <h2 class="block-title">Payment</h2>
+          <div class="radio-row">
+            <label class="radio active"><input type="radio" name="payment" value="cod" checked> Cash on delivery</label>
+            <label class="radio"><input type="radio" name="payment" value="card"> Card (demo)</label>
+          </div>
+
+          <div id="card-fields" hidden>
+          <div class="field">
+            <label for="co-cardNumber">Card number</label>
+            <div class="input-wrap"><input id="co-cardNumber" name="cardNumber" type="text" autocomplete="cc-number" inputmode="numeric" placeholder="1234 5678 9012 3456"></div>
+            <p class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="co-cardName">Name on card</label>
+            <div class="input-wrap"><input id="co-cardName" name="cardName" type="text" autocomplete="cc-name"></div>
+            <p class="field-error" role="alert"></p>
+          </div>
+          </div>
+
+          <button class="pill pill-black pill-block" type="submit" id="place-order">Place order</button>
+        </form>
+
+        <aside class="summary">
+          <h2 class="block-title">Order summary</h2>
+          <ul class="summary-list" id="summary-lines"></ul>
+          <p class="row"><span>Delivery</span><span>Free</span></p>
+          <p class="row total"><span>Total</span><strong id="summary-total"></strong></p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- After the order is placed -->
+    <section id="checkout-done" class="narrow" hidden>
+      <h1 class="display page-title">Order placed</h1>
+      <p class="lead" id="done-message"></p>
+      <p class="card-meta" id="done-details"></p>
+      <p class="card-meta">This is a school project, so no real payment was made.</p>
+      <div class="actions-row">
+        <a class="pill pill-black" href="shop.html">Continue shopping</a>
+        <a class="pill pill-outline" id="done-profile-link" href="profile.html" hidden>View my orders</a>
+      </div>
+    </section>
+
+  </main>
+  <!-- Order matters: data first, then store, then ui, then the page code -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KQ Store | Kevin Quiambao × Quiccs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <main>
+    <section class="hero">
+      <img class="hero-shoe" src="images/shoe-pink.png" alt="Padidas Adizero Select 3.0 KQ63 in neon pink">
+      <div class="hero-text">
+        <p class="hero-sub">Kevin Quiambao × Quiccs</p>
+        <h1 class="display">Adizero Select 3.0</h1>
+        <p class="hero-line">Neon pink. Made for the court.</p>
+        <a href="shop.html" class="pill pill-white">Shop</a>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="section-head">
+        <h2 class="display section-title">Featured</h2>
+        <a href="shop.html" class="more-link">Shop all</a>
+      </div>
+      <div class="product-grid" id="featured-grid"></div>
+    </section>
+  </main>
+  <!-- Order matters: data first, then store, then ui, then the page code -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>
